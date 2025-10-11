@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>简单网页示例</title>
+    <style>
+        /* 内部样式表 - 无外部引用 */
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #4CAF50;
+        }
+        
+        h1 {
+            color: #4CAF50;
+            margin: 0;
+        }
+        
+        .content {
+            background-color: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .image-placeholder {
+            width: 100%;
+            height: 200px;
+            background-color: #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px 0;
+            border-radius: 4px;
+            color: #666;
+        }
+        
+        ul {
+            padding-left: 20px;
+        }
+        
+        li {
+            margin: 8px 0;
+        }
+        
+        .button-container {
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        button:hover {
+            background-color: #45a049;
+        }
+        
+        #message {
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 4px;
+            display: none;
+        }
+        
+        .success {
+            background-color: #dff0d8;
+            color: #3c763d;
+            border: 1px solid #d6e9c6;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>我的简单网页</h1>
+        <p>这是一个不依赖任何外部资源的网页</p>
+    </header>
+    
+    <div class="content">
+        <h2>欢迎访问</h2>
+        <p>这个网页完全由HTML、CSS和JavaScript构建，没有引用任何外部文件或资源。</p>
+        
+        <h3>网页包含以下元素：</h3>
+        <ul>
+            <li>基本的HTML结构</li>
+            <li>内部CSS样式</li>
+            <li>简单的JavaScript交互</li>
+            <li>图片占位区域</li>
+            <li>响应式设计元素</li>
+        </ul>
+        
+        <div class="image-placeholder">
+            图片占位区域
+        </div>
+        
+        <div class="button-container">
+            <button onclick="showMessage()">点击我</button>
+            <div id="message" class="success"></div>
+        </div>
+    </div>
+
+    <script>
+        // 内部JavaScript - 无外部引用
+        function showMessage() {
+            const messageElement = document.getElementById('message');
+            messageElement.textContent = '按钮被点击了！这是一个简单的JavaScript交互效果。';
+            messageElement.style.display = 'block';
+            
+            // 3秒后隐藏消息
+            setTimeout(() => {
+                messageElement.style.display = 'none';
+            }, 3000);
+        }
+
+        // 页面加载完成后显示欢迎信息
+        window.onload = function() {
+            console.log('网页加载完成！');
+        };
+    </script>
+</body>
+</html>
