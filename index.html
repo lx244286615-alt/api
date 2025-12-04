@@ -1,15 +1,113 @@
-
-  <!DOCTYPE html>
-  <html lang="en">
-    <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>吸引用户的资源网站</title>
-    </head>
-
-    <body>
-      <div id="root"></div>
-      <script type="module" src="/src/main.tsx"></script>
-    </body>
-  </html>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>海量资源平台</title>
+  <!-- 引入 Tailwind CSS 实现样式 -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- 引入 Font Awesome 图标 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              light: '#a855f7', // 浅紫
+              DEFAULT: '#7e22ce', // 深紫
+              dark: '#4c1d95', // 暗紫
+            },
+            accent: '#ec4899', // 粉色
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+        },
+      }
+    }
+  </script>
+
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .bg-gradient-purple {
+        background: linear-gradient(135deg, #a855f7 0%, #4c1d95 100%);
+      }
+      .text-glow {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+      }
+      .input-glow {
+        box-shadow: 0 0 15px rgba(168, 85, 247, 0.5);
+      }
+    }
+  </style>
+</head>
+<body class="bg-gradient-purple min-h-screen font-sans text-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
+    <!-- 顶部标签 -->
+    <div class="text-center mb-6">
+      <span class="inline-block px-3 py-1 bg-primary/30 rounded-full text-sm flex items-center gap-1">
+        <i class="fa-solid fa-star text-yellow-300"></i>
+        发现最优质的资源
+      </span>
+    </div>
+
+    <!-- 主标题区域 -->
+    <div class="text-center mb-8">
+      <h1 class="text-4xl md:text-6xl font-bold mb-2 text-glow">海量资源</h1>
+      <p class="text-2xl md:text-3xl text-white/90">尽在指尖</p>
+      <p class="mt-6 text-white/70 max-w-2xl mx-auto">
+        精选全网优质资源, 涵盖设计、开发、学习、工具等多个领域, 让你的工作效率提升10倍
+      </p>
+    </div>
+
+    <!-- 搜索框 -->
+    <div class="max-w-xl mx-auto mb-16">
+      <div class="relative">
+        <input 
+          type="text" 
+          placeholder="搜索你想要的资源..." 
+          class="w-full py-4 px-6 rounded-full bg-primary/20 border border-white/20 focus:outline-none focus:border-white/50 input-glow"
+        >
+        <button class="absolute right-2 top-2 px-5 py-2 rounded-full bg-accent hover:bg-accent/90 transition-colors">
+          搜索
+        </button>
+      </div>
+    </div>
+
+    <!-- 数据统计卡片 -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-12">
+      <!-- 优质资源 -->
+      <div class="bg-primary/20 backdrop-blur-sm rounded-lg p-6 text-center border border-white/10 hover:border-white/20 transition-all">
+        <p class="text-2xl md:text-3xl font-bold">50,000+</p>
+        <p class="text-white/70 mt-1">优质资源</p>
+      </div>
+      
+      <!-- 活跃用户 -->
+      <div class="bg-primary/20 backdrop-blur-sm rounded-lg p-6 text-center border border-white/10 hover:border-white/20 transition-all">
+        <p class="text-2xl md:text-3xl font-bold">120,000+</p>
+        <p class="text-white/70 mt-1">活跃用户</p>
+      </div>
+      
+      <!-- 资源分类 -->
+      <div class="bg-primary/20 backdrop-blur-sm rounded-lg p-6 text-center border border-white/10 hover:border-white/20 transition-all">
+        <p class="text-2xl md:text-3xl font-bold">200+</p>
+        <p class="text-white/70 mt-1">资源分类</p>
+      </div>
+      
+      <!-- 每日更新 -->
+      <div class="bg-primary/20 backdrop-blur-sm rounded-lg p-6 text-center border border-white/10 hover:border-white/20 transition-all">
+        <p class="text-2xl md:text-3xl font-bold">500+</p>
+        <p class="text-white/70 mt-1">每日更新</p>
+      </div>
+    </div>
+
+    <!-- 资源分类标题 -->
+    <div class="text-center">
+      <h2 class="text-2xl md:text-3xl font-bold">资源分类</h2>
+      <p class="text-white/70 mt-2">探索各个领域的精选资源</p>
+    </div>
+  </div>
+</body>
+</html>
