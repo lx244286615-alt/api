@@ -105,7 +105,7 @@
             <li>内部CSS样式</li>
             <li>简单的JavaScript交互</li>
             <li>图片占位区域</li>
-            <li>响应式设计元素</li>
+            <li>响应式设计元素123455555555555</li>
         </ul>
         
         <div class="image-placeholder">
@@ -114,11 +114,13 @@
         
         <div class="button-container">
             <button onclick="showMessage()">点击我</button>
+            <button id="newButton" onclick="newButtonAction()">新增按钮</button>
             <div id="message" class="success"></div>
         </div>
     </div>
 
     <script>
+    
         // 内部JavaScript - 无外部引用
         function showMessage() {
             const messageElement = document.getElementById('message');
@@ -129,6 +131,23 @@
             setTimeout(() => {
                 messageElement.style.display = 'none';
             }, 3000);
+        }
+
+        // 新增按钮的处理函数：切换页面背景色并显示短暂提示
+        function newButtonAction() {
+            const body = document.body;
+            const current = body.style.backgroundColor || '';
+            // 简单切换两种背景色
+            if (current === 'rgb(245, 245, 245)' || current === '#f5f5f5' || current === '') {
+                body.style.backgroundColor = '#fff7e6';
+            } else {
+                body.style.backgroundColor = '#f5f5f5';
+            }
+
+            const messageElement = document.getElementById('message');
+            messageElement.textContent = '已切换页面背景色。';
+            messageElement.style.display = 'block';
+            setTimeout(() => { messageElement.style.display = 'none'; }, 1500);
         }
 
         // 页面加载完成后显示欢迎信息
